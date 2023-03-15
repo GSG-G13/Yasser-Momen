@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap");
+
+:root {
+  --orange: #f79f1f;
+  --text-color-1: #444;
+  --text-color-2: #666;
+  --bg-color-1: #fff;
+  --bg-color-2: #eee;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 5rem;
+}
+
+body {
+  background: var(--bg-color-2);
+}
+
+body.active {
+  --text-color-1: #fff;
+  --text-color-2: #eee;
+  --bg-color-1: #333;
+  --bg-color-2: #222;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+section {
+  padding: 2rem 7%;
+}
+
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  color: var(--text-color-1);
+  font-size: 4rem;
+}
+
+.heading span {
+  position: relative;
+  z-index: 0;
+}
+
+.heading span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  background: var(--orange);
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 90%, 100% 83%, 100% 100%, 0% 100%);
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.8rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background: #ab6806;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  letter-spacing: 0.2rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-color-1);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem 7%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  color: var(--text-color-1);
+}
+
+.header .logo i {
+  color: var(--orange);
+}
+
+.header .search-form {
+  background: var(--bg-color-2);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 4.5rem;
+  width: 50rem;
+}
+
+.header .search-form input {
+  height: 100%;
+  width: 100%;
+  background: none;
+  text-transform: none;
+  font-size: 1.5rem;
+  color: var(--text-color-1);
+  padding: 1rem;
+}
+
+.header .search-form label {
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--text-color-1);
+  cursor: pointer;
+}
+
+.header .search-form label:hover {
+  color: var(--orange);
+}
+
+.header .icons div {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+  background: var(--bg-color-2);
+  color: var(--text-color-1);
+  cursor: pointer;
+  text-align: center;
+}
+
+.header .icons div:hover {
+  color: #fff;
+  background: var(--orange);
+}
+
+#search-btn {
+  display: none;
+}
+
+.header .navbar {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  background: var(--bg-color-1);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  width: 25rem;
+  transform: scale(0);
+  transform-origin: top right;
+}
+
+.header .navbar.active {
+  transform: scale(1);
+}
+
+.header .navbar a {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: var(--text-color-1);
+  border-radius: 0.5rem;
+}
+
+.header .navbar a:hover {
+  color: var(--orange);
+  background: var(--bg-color-2);
+  padding-left: 2rem;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 7rem;
+  background: #fff;
+}
+
+.home .image {
+  flex: 1 1 45rem;
+}
+
+.home .image img {
+  width: 100%;
+}
+
+.home .content {
+  flex: 1 1 45rem;
+}
+
+.home .content h3 {
+  color: var(--text-color-1);
+  font-size: 4rem;
+}
+
+.home .content p {
+  color: var(--text-color-2);
+  font-size: 1.7rem;
+  line-height: 1.7;
+  padding: 1rem 0;
+}
+
+.form-container form {
+  background: var(--bg-color-1);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+}
+
+.form-container form .inputBox {
+  flex: 3;
+}
+
+.form-container form .inputBox span {
+  font-size: 1.7rem;
+  color: var(--text-color-2);
+}
+
+.form-container form .inputBox input {
+  font-size: 1.5rem;
+  color: var(--text-color-1);
+  background: var(--bg-color-2);
+  border-radius: 0.5rem;
+  margin: 0.5rem 0 0 0;
+  text-transform: none;
+  width: 100%;
+  padding: 1rem;
+}
+
+.form-container form .btn {
+  flex: 1;
+}
+
+.form-container form .myingredients {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.form-container form .myingredients span {
+  font-size: 17px;
+  background-color: #eee;
+  padding: 8px 12px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  position: relative;
+}
+.form-container form .myingredients span::after {
+  content: "x";
+  width: 10px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  padding: 3px;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 10px;
+  top: -5px;
+  right: -3px;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.packages .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.packages .box-container .box {
+  background: var(--bg-color-1);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  max-width: 30rem;
+}
+
+.packages .box-container .box .image {
+  height: 25rem;
+  width: 100%;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.packages .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.packages .box-container .box .image h3 {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  font-weight: lighter;
+  padding: 0.5rem 1.5rem;
+}
+
+.packages .box-container .box .image h3 i {
+  color: var(--orange);
+}
+
+.packages .box-container .box .content {
+  padding: 1.5rem;
+  padding-top: 0;
+}
+
+.packages .box-container .box .content .title {
+  font-weight: 600;
+  color: var(--text-color-1);
+  font-size: 2.5rem;
+}
+
+.packages .box-container .box .content .title span {
+  font-weight: lighter;
+  color: var(--text-color-2);
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+
+.packages .box-container .box .content p {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  color: var(--text-color-2);
+  line-height: 1.7;
+}
+
+.footer .credit {
+  font-size: 2rem;
+  text-align: center;
+  border-top: 0.1rem solid var(--text-color-2);
+  padding: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  color: var(--text-color-2);
+}
+
+.footer .credit span {
+  color: var(--orange);
+}
+
+/* media queries  */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .navbar {
+    right: 2rem;
+  }
+
+  .header .login-form {
+    right: 2rem;
+  }
+
+  #search-btn {
+    display: inline-block;
+  }
+
+  .header .search-form {
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    background: var(--bg-color-1);
+    border-radius: 0.5rem;
+    width: 90%;
+    box-shadow: var(--box-shadow);
+    transform: scale(0);
+    transform-origin: top right;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
